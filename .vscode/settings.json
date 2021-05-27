@@ -1,0 +1,8 @@
+{
+    "workbench.editorAssociations": [
+    
+    ],
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+     }
+}
