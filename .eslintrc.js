@@ -16,12 +16,15 @@ module.exports = {
   },
   plugins: ["vue", "@typescript-eslint"],
   rules: {
+    // "no-trailing-spaces": ["error", { "skipBlankLines": true }],
+    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+    "vue/no-parsing-error": [2, { "x-invalid-end-tag": false }],
+    "linebreak-style": "off",
     // allow async-await
     "generator-star-spacing": "off",
     // allow debugger during development
-    "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
     // js语句结尾必须使用分号
-    semi: ["off", "always"],
+    semi: ["2", "always"],
     // 三等号
     eqeqeq: 0,
     // 强制在注释中 // 或 /* 使用一致的空格
@@ -38,3 +41,24 @@ module.exports = {
     "comma-dangle": 0,
   },
 };
+// module.exports = {
+//   root: true,
+//   parserOptions: {
+//     parser: 'babel-eslint',
+//     ecmaVersion: 9,
+//     sourceType: 'module',
+//   },
+//   env: {
+//     browser: true,
+//   },
+//   extends: [ 'plugin:vue/essential', 'eslint-config-egg' ],
+//   plugins: [
+//     'vue'
+//   ],
+//   rules: {
+//     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+//     "vue/no-parsing-error": [ 2, { "x-invalid-end-tag": false } ],
+//     "linebreak-style": "off",
+//   },
+// };
+

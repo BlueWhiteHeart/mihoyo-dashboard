@@ -1,5 +1,7 @@
 <template>
   <div>
+    <van-button type="primary" @click="fetch">主要按钮</van-button>
+    <van-icon name="chat-o" />
     <h1>{{ msg }}</h1>
     <p>
       Recommended IDE setup:
@@ -31,21 +33,38 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue';
+import { ref, defineComponent, getCurrentInstance } from 'vue'
+import { Button } from 'vant'
 
 export default defineComponent({
+  components: {
+    [Button.name]: Button
+  },
   name: 'HelloWorld',
   props: {
     msg: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
+  // methods: {
+  //   fetch() {
+  //     console.log('发送请求')
+  //     console.log(this)
+  //   }
+  // },
   setup: () => {
-    const count = ref(0);
-    return { count };
-  },
-});
+    const count = ref(0)
+    const { ctx } = getCurrentInstance()
+    function fetch() {
+      ctx.$http.get('/test', { a: '111' } , {}).then(() => {
+        //请求成功
+      })
+    }
+
+    return { count, fetch }
+  }
+})
 </script>
 
 <style scoped>
