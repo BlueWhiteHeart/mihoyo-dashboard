@@ -4,6 +4,7 @@ import { resolve } from "path";
 import styleImport from "vite-plugin-style-import";
 import legacy from '@vitejs/plugin-legacy'; // 是为了使构建的页面兼容那些不支持 module script 的浏览器
 
+
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
