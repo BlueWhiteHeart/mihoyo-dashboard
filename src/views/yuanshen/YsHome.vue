@@ -3,8 +3,10 @@
     <!-- <van-button type="primary" @click="createTab" size="small">创建tab模拟数据</van-button>
     <van-button type="primary" @click="getTab" size="small">获取tab模拟数据</van-button> -->
     <Head></Head>
-    <van-tabs v-model:active="active" swipeable>
-      <van-tab v-for="(item,index) in tabData" :title="tabData[index].name">{{ tabData[index].des }} </van-tab>
+    <van-tabs :active="active" swipeable>
+      <van-tab v-for="(item, index) in tabData" :title="tabData[index].name" :key="item.id"
+        >{{ tabData[index].des }}
+      </van-tab>
     </van-tabs>
   </div>
 </template>
@@ -12,7 +14,7 @@
 <script lang="ts">
 import { ref, defineComponent, getCurrentInstance } from 'vue'
 import { Button } from 'vant'
-import Head from './Head.vue'
+import Head from '../../components/home/Head.vue'
 
 export default defineComponent({
   data() {
@@ -31,7 +33,8 @@ export default defineComponent({
   },
   methods: {
     getTab() {
-    const { ctx, proxy }: any = getCurrentInstance()
+      const { ctx, proxy }: any = getCurrentInstance()
+      console.log(proxy)
       ctx.$http.get('/getTab', {}, {}).then((res: any) => {
         if (res.data.status === 'SUCCEED') {
           this.tabData = res.data.data
@@ -53,6 +56,7 @@ export default defineComponent({
     const count = ref(0)
     // let tabData = ref(0)
     const { ctx, proxy }: any = getCurrentInstance()
+    console.log(props,context,proxy);
     function createTab() {
       console.log('创建')
       ctx.$http.get('/createTab', {}, {}).then(() => {
@@ -71,8 +75,8 @@ export default defineComponent({
     //     //请求成功
     //   })
     // }
-    const active = ref(2);
-    return { count, createTab,active }
+    const active = ref(2)
+    return { count, createTab, active }
   }
 })
 </script>

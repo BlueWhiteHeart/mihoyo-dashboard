@@ -15,7 +15,7 @@ app.config.globalProperties.$http = axios;
 app.use(router)
 app.use(store)
 console.log('00000000000000000000000000000')
-console.log(app)
+console.log(router)
 console.log('00000000000000000000000000000')
 app.use(Vant);
 app.mount('#app')

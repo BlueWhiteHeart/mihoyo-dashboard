@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="mobile-mainPage">
     <div class="header-bar"><img src="../../assets/menu-dark.png" /></div>
     <div class="m-bbs-bg"></div>
@@ -636,4 +636,4 @@ a {
     transform: translate(-10px, -10px);
   }
 }
-</style>
+</style> -->

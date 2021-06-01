@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>axios</div>
 </template>
 <script lang="ts">
 import { defineComponent } from 'vue'
