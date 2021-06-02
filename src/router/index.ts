@@ -16,6 +16,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Axios',
     component: () => import('@/views/axios.vue'),
   },
+  {
+    path: '/personCenter',
+    name: 'PersonCenter',
+    component: () => import('@/views/personCenter/personCenter.vue'),
+  },
   ...ysRouter,
 ];
 

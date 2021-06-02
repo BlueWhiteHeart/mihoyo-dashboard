@@ -104,7 +104,7 @@
 <script lang="ts">
 import { ref, defineComponent, getCurrentInstance } from 'vue'
 import { Button } from 'vant'
-import {useRouter} from 'vue-router'
+// import {useRouter} from 'vue-router'
 
 export default defineComponent({
   data() {
@@ -122,11 +122,11 @@ export default defineComponent({
   },
   methods: {
     clickYs() {
-      const router = useRouter()
-      this.$router.push('/axios');
-      router.push({
-        path: '/axios'
-      })
+      // const router = useRouter()
+      this.$router.push('/ys/home');
+      // router.push({
+      //   path: '/axios'
+      // })
       console.log('跳转原神');
       console.log(this.$route);
       console.log('跳转原神');

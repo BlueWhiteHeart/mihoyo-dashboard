@@ -82,4 +82,8 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.ys-theme .root-page .mhy-header {
+    background: #2d2f33;
+    color: #ccc;
+}
 </style>

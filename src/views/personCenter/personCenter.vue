@@ -1,6 +1,16 @@
 <template>
   <div>
-    个人中心
+    <van-nav-bar :title="title" left-text="" left-arrow>
+      <template #left>
+        <van-icon name="arrow-left" />
+      </template>
+      <template #middle> 123</template>
+      <template #right>
+        <van-icon name="search" size="18" />
+        <span style="width: 10px"></span>
+        <van-icon name="chat-o" size="18" badge="5" />
+      </template>
+    </van-nav-bar>
   </div>
 </template>
 
@@ -9,10 +19,9 @@ import { ref, defineComponent, getCurrentInstance } from 'vue'
 
 export default defineComponent({
   data() {
-    return { tabData: [] }
+    return { title: '个人', tabData: [] }
   },
-  components: {
-  },
+  components: {},
   name: 'PersonCenter',
   props: {
     msg: {
@@ -21,8 +30,7 @@ export default defineComponent({
     }
   },
   methods: {
-    getTab() {
-    }
+    getTab() {}
   },
   created() {
     this.getTab()
@@ -34,7 +42,7 @@ export default defineComponent({
     const count = ref(0)
     // let tabData = ref(0)
     const { ctx, proxy }: any = getCurrentInstance()
-    console.log(ctx,props,context,proxy);
+    console.log(ctx, props, context, proxy)
     const active = ref(2)
     return { count, active }
   }
