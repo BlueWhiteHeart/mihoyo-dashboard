@@ -50,7 +50,7 @@ export default defineComponent({
 
     jumpPesonCenter() {
       this.$router.push({
-        path: 'personCenter'
+        path: '/personCenter'
       })
       console.log('发送请求')
       console.log(this)
