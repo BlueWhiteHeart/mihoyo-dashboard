@@ -1,5 +1,5 @@
 <template>
-  <div class="personCenter">
+  <div>
     <van-nav-bar :title="title" left-text="" left-arrow>
       <template #left>
         <van-icon name="arrow-left" />
@@ -11,22 +11,30 @@
         <van-icon name="setting-o" />
       </template>
     </van-nav-bar>
+    <van-row>
+      <van-col span="12" offset="6">
+        <div class="miyob-container">
+          <img src="../../assets/miyob63fa36fd.png" class="mhy-img-icon" />
+          <span>我的米游币 120</span>
+        </div>
+      </van-col>
+    </van-row>
+    <div style="height: 10%"></div>
+    <!-- <div class="personCenter" style="width: 100%; height: 200px; z-index: 1;position:absolute"></div> -->
     <div class="contentCard">
-      <div class="head">
-        <!-- <img   src="../../assets/avatar1.png" alt=""> -->
-      </div>
+      <div class="head"></div>
       <div style="padding-top: 12px">
         <van-row>
           <van-col span="10" offset="7">
             <span style="color: gray; font-size: 10px">通行证ID:277269185</span>
           </van-col>
           <van-col offset="1">
-            <van-button round type="primary" size="small" style="width: 5em" plain>编辑</van-button>
+            <van-button round type="primary" size="small" style="width: 5em" plain @click="edit">编辑</van-button>
           </van-col>
         </van-row>
       </div>
       <van-row>
-        <van-col span="5" offset="1">罗宾逊</van-col>
+        <van-col span="6" offset="1">罗宾逊</van-col>
         <van-col span="4">
           <img src="https://img-static.mihoyo.com/level/level1.png" class="mhy-img-icon" />
         </van-col>
@@ -56,41 +64,45 @@
         </van-row>
       </div>
     </div>
-    <div style="padding-top:10px">
+    <div style="padding-top: 10px">
       <van-tabs>
         <van-tab title="发帖">
-          <div>发帖</div>
+          <div style="height: 10rem">
+            <div style="text-align: center">
+              <img
+                src="../../assets/noDatac9a869bc.png"
+                alt=""
+                style="width: 6rem; padding: 1rem 0 1rem 0"
+              />
+              <p style="color: #cccccc; font-size: 12px">暂时没有帖子哟</p>
+            </div>
+          </div>
         </van-tab>
         <van-tab title="回复">
-          <div>回复</div>
+          <div style="height: 10rem">
+            <div style="text-align: center">
+              <img
+                src="../../assets/noDatac9a869bc.png"
+                alt=""
+                style="width: 6rem; padding: 1rem 0 1rem 0"
+              />
+              <p style="color: #cccccc; font-size: 12px">暂时没有帖子哟</p>
+            </div>
+          </div>
         </van-tab>
         <van-tab title="收藏">
-          <div>收藏</div>
+          <div style="height: 10rem">
+            <div style="text-align: center">
+              <img
+                src="../../assets/noDatac9a869bc.png"
+                alt=""
+                style="width: 6rem; padding: 1rem 0 1rem 0"
+              />
+              <p style="color: #cccccc; font-size: 12px">暂时没有帖子哟</p>
+            </div>
+          </div>
         </van-tab>
       </van-tabs>
-    </div>
-    <div>
-      <!-- <div class="wrapper">
-        <div>One</div>
-        <div>Two</div>
-        <div>Three</div>
-        <div>Four</div>
-        <div>Five</div>
-      </div> -->
-    </div>
-    <div class="container">
-      <div class="item"></div>
-      <p>
-        Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean
-        corn fava bean mustard tigernut jícama green bean celtuce.
-      </p>
-      <p>
-        Grape silver beet collard greens avocado quandong fennel gumbo black-eyed pea watercress
-        potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet
-        pepper radish garlic brussels sprout groundnut summer purslane earthnut pea tomato spring
-        onion azuki bean gourd. Gumbo kakadu plum komatsuna black-eyed pea green bean zucchini gourd
-        winter purslane silver beet rock melon radish asparagus spinach.
-      </p>
     </div>
   </div>
 </template>
@@ -111,6 +123,9 @@ export default defineComponent({
     }
   },
   methods: {
+    edit(){
+      console.log('edit');
+    },
     getTab() {}
   },
   created() {
@@ -135,11 +150,30 @@ export default defineComponent({
   background: url('../../assets/ysCenterBackground62c1bfcb (1).png') center;
   background-size: cover;
   background-color: gainsboro;
-  height: 100%;
+  /* height: 100%; */
   /* padding: 20px; */
   /* font: 1em Helvetica Neue, Helvetica, Arial, sans-serif; */
 }
-
+.miyob-container {
+    position: absolute;
+    height: .5rem;
+    line-height: .5rem;
+    right: 10%;
+    top: 10%;
+    background-color: rgba(0,0,0,.6);
+    padding-right: .15rem;
+    font-size: .12rem;
+    color: #fff;
+    border-radius: .12rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.mhy-img-icon {
+    font-size: .24rem;
+    margin-right: .1rem;
+    vertical-align: top;
+}
 p {
   margin: 0 0 1em 0;
 }
@@ -150,14 +184,9 @@ p {
   overflow: hidden;
 }
 
-.item {
-  float: left;
-  background-color: rgba(111, 41, 97, 0.3);
-
-}
 .contentCard {
   border-radius: 2%;
-  width: 95%;
+  width: 90%;
   height: 5rem;
   margin: 0 auto;
   margin-top: 15%;
@@ -169,8 +198,8 @@ p {
   background: url('../../assets/avatar1.png');
   background-size: cover;
   background-color: white;
-  width: 1.7rem;
-  height: 1.7rem;
+  width: 2.7em;
+  height: 2.7em;
   position: absolute;
   border-radius: 50%;
   left: 10%;
