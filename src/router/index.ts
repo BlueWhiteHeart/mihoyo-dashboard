@@ -26,6 +26,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'EditPerson',
     component: () => import('@/views/personCenter/editPerson.vue'),
   },
+  {
+    path: '/setting',
+    name: 'Setting',
+    component: () => import('@/views/personCenter/setting.vue'),
+  },
   ...ysRouter,
 ];
 

@@ -7,8 +7,8 @@
       <template #middle></template>
       <template #right>
         <van-icon name="gift-o" size="18" badge="5" />
-        <span style="width: 10px"></span>
-        <van-icon name="setting-o" />
+        <span style="width: 20px"></span>
+        <van-icon name="setting-o" size="18" />
       </template>
     </van-nav-bar>
     <van-row>
@@ -29,7 +29,9 @@
             <span style="color: gray; font-size: 10px">通行证ID:277269185</span>
           </van-col>
           <van-col offset="1">
-            <van-button round type="primary" size="small" style="width: 5em" plain @click="edit">编辑</van-button>
+            <van-button round type="primary" size="small" style="width: 5em" plain @click="edit"
+              >编辑</van-button
+            >
           </van-col>
         </van-row>
       </div>
@@ -123,8 +125,11 @@ export default defineComponent({
     }
   },
   methods: {
-    edit(){
-      console.log('edit');
+    edit() {
+      this.$router.push({
+        path: '/editPerson'
+      })
+      console.log('edit')
     },
     getTab() {}
   },
@@ -155,24 +160,24 @@ export default defineComponent({
   /* font: 1em Helvetica Neue, Helvetica, Arial, sans-serif; */
 }
 .miyob-container {
-    position: absolute;
-    height: .5rem;
-    line-height: .5rem;
-    right: 10%;
-    top: 10%;
-    background-color: rgba(0,0,0,.6);
-    padding-right: .15rem;
-    font-size: .12rem;
-    color: #fff;
-    border-radius: .12rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  position: absolute;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  right: 10%;
+  top: 10%;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding-right: 0.15rem;
+  font-size: 0.12rem;
+  color: #fff;
+  border-radius: 0.12rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 .mhy-img-icon {
-    font-size: .24rem;
-    margin-right: .1rem;
-    vertical-align: top;
+  font-size: 0.24rem;
+  margin-right: 0.1rem;
+  vertical-align: top;
 }
 p {
   margin: 0 0 1em 0;
